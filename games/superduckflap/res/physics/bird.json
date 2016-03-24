@@ -28,13 +28,4 @@
             "shape": [   63, 19  ,  60, 22  ,  51, 22  ,  51, 14  ,  60, 14  ,  63, 17  ]
         }
     ]
-    , 
-    "pipe": [
-        
-        {
-            "density": 2, "friction": 0, "bounce": 0, 
-            "filter": { "categoryBits": 1, "maskBits": 65535 },
-            "shape": [   0, 60  ,  0, 0  ,  60, 0  ,  60, 60  ]
-        }
-    ]
 }

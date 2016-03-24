@@ -1,4 +1,66 @@
-html, body {
-	background-color: #333333;
-	color: white;
+body {
+    background-image: url("images/background.jpeg");
+    color: white;
+}
+
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav li {
+    float: left;
+}
+
+.nav a:link, a:visited {
+    font: 15px arial, sans-serif;
+    display: block;
+    width: 120px;
+    height: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #98bf21;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav a:hover, a:active {
+    font: 15px arial, sans-serif;
+    width: 120px;
+    height: 16px;
+    font-weight: bold;
+    background-color: #7A991A;
+}
+
+.gameList {
+    background-color: white;
+    color: black;
+}
+
+.gameList ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.gameList a:link, a:visited, a:hover, a:active {
+    font: 20px arial, sans-serif;
+    display: block;
+    width: 200px;
+    height: 180px;
+    font-weight: bold;
+    color: black;
+    padding: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.gameList a:active {
+    border-color: black;
+    background-color: white;
 }
