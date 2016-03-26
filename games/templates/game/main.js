@@ -1,23 +1,43 @@
 var game = new Phaser.Game(640, 480, Phaser.AUTO, 'gameDiv');
 
-GameStates = {};
-
-GameStates.MainState = function () { };
-GameStates.MainState.prototype = {
+var bootState = {
 	
-	preload: function () {
-		
+	preload: function() {
+		game.stage.backgroundColor = '#212121';
 	},
 	
-	create: function () {
+	create: function() {
+		/*game.physics.startSystem(Phaser.Physics.ARCADE);*/
 		
-	},
-	
-	update: function () {
-		
+		game.state.start('load');
 	}
 	
 };
 
-game.state.add('main', GameStates.MainState);
-game.state.start('main');
+var loadState = {
+	
+	preload: function() {
+		game.stage.backgroundColor = '#212121';
+		//load resources here
+	},
+	
+	create: function() {
+		game.state.start('main');
+	},
+	
+};
+
+var mainState = {
+	
+	preload: function() { }
+	
+	create: function() { },
+	
+	update: function() { }
+	
+}
+
+game.state.add('boot', bootState);
+game.state.add('load', loadState);
+game.state.add('main', mainState);
+game.state.start('boot');
