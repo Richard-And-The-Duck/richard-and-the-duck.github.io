@@ -1,43 +1,27 @@
-var game = new Phaser.Game(640, 480, Phaser.AUTO, 'gameDiv');
+var gameProperties = {
+	screenWidth: 640,
+	screenHeight: 480
+}
 
-var bootState = {
+var game = new Phaser.Game(gameProperties.screenWidth, gameProperties.screenHeight, Phaser.AUTO, 'gameDiv');
+
+var Main = function() { };
+Main.prototype = {
 	
 	preload: function() {
-		game.stage.backgroundColor = '#212121';
+		game.load.script('splash', 'res/scripts/splash.js');
+		
+		game.load.image('logo', 'res/images/logo.png');
+		game.load.image('loadingBar', 'res/images/loadingBar.png');
+		//load splash screen background image
 	},
 	
 	create: function() {
-		/*game.physics.startSystem(Phaser.Physics.ARCADE);*/
-		
-		game.state.start('load');
+		game.state.add('splash', Splash);
+		game.state.start('splash');
 	}
 	
 };
 
-var loadState = {
-	
-	preload: function() {
-		game.stage.backgroundColor = '#212121';
-		//load resources here
-	},
-	
-	create: function() {
-		game.state.start('main');
-	},
-	
-};
-
-var mainState = {
-	
-	preload: function() { },
-	
-	create: function() { },
-	
-	update: function() { }
-	
-}
-
-game.state.add('boot', bootState);
-game.state.add('load', loadState);
-game.state.add('main', mainState);
-game.state.start('boot');
+game.state.add('main', Main);
+game.state.start('main');
