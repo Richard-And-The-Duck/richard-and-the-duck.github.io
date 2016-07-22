@@ -16,7 +16,33 @@ Splash.prototype = {
 		game.add.existing(this.status);
 		this.load.setPreloadSprite(this.loadingBar);
 		
-		//load ALL OTHER resources
+		this.loadAssets();
+		
+		//start physics
+	},
+	
+	loadAssets: function() {
+		//scripts
+		game.load.script('style', 'res/style.js');
+		game.load.script('menu', 'res/scripts/menu.js');
+		
+		//images
+		
+		//sounds
+		
+		//physics
+	},
+	
+	addGameStates: function () {
+		game.state.add('menu', Menu);
+	},
+	
+	create: function() {
+		this.status.text = 'READY!';
+		
+		setTimeout(function() {
+			game.state.start('menu');
+		}, 3000);
 	}
 	
 };

@@ -9,6 +9,7 @@ var Main = function() { };
 Main.prototype = {
 	
 	preload: function() {
+		game.load.script('utils', 'res/scripts/utils.js');
 		game.load.script('splash', 'res/scripts/splash.js');
 		
 		game.load.image('logo', 'res/images/logo.png');
