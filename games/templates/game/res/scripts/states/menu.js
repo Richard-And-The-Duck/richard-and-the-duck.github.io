@@ -18,14 +18,14 @@ Menu.prototype = {
 		
 		game.add.existing(this.titleText);
 		
-		this.addMenuOption('Start', function(target) {
+		this.addMenuOption('Start', function() {
 			console.log('You clicked start!');
 		});
-		this.addMenuOption('Options', function(target) {
-			console.log('You clicked options!');
+		this.addMenuOption('Options', function() {
+			game.state.start('options');
 		});
-		this.addMenuOption('Credits', function(target) {
-			
+		this.addMenuOption('Credits', function() {
+			console.log('You clicked credits!');
 		});
 	},
 	

@@ -24,7 +24,7 @@ Splash.prototype = {
 	loadAssets: function() {
 		//scripts
 		game.load.script('style', 'res/style.js');
-		game.load.script('menu', 'res/scripts/menu.js');
+		game.load.script('menu', 'res/scripts/states/menu.js');
 		
 		//images
 		
@@ -35,14 +35,31 @@ Splash.prototype = {
 	
 	addGameStates: function () {
 		game.state.add('menu', Menu);
+		game.state.add('options', Options);
 	},
 	
 	create: function() {
-		this.status.text = 'READY!';
+		this.status.text = 'READY! 5...';
+		
+		setTimeout(function() {
+			this.status.text = 'READY! 4...';
+		}, 1000);
+		
+		setTimeout(function() {
+			this.status.text = 'READY! 3...'
+		}, 1000);
+		
+		setTimeout(function() {
+			this.status.text = 'READY! 2...'
+		}, 1000);
+		
+		setTimeout(function() {
+			this.status.text = 'READY! 1...'
+		}, 1000);
 		
 		setTimeout(function() {
 			game.state.start('menu');
-		}, 3000);
+		}, 1000);
 	}
 	
 };

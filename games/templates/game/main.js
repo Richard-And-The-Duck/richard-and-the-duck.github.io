@@ -12,8 +12,8 @@ Main.prototype = {
 		game.load.script('utils', 'res/scripts/utils.js');
 		game.load.script('splash', 'res/scripts/splash.js');
 		
-		game.load.image('logo', 'res/images/logo.png');
-		game.load.image('loadingBar', 'res/images/loadingBar.png');
+		game.load.image('logo', '../res/images/logo.png');
+		game.load.image('loadingBar', '../res/images/loadingBar.png');
 		//load splash screen background image
 	},
 	
